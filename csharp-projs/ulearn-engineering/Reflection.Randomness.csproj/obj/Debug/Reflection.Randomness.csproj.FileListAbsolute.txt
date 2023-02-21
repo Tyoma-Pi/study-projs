@@ -1,0 +1,3 @@
+C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\Reflection.Randomness.csproj\obj\Debug\Reflection.Randomness.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\Reflection.Randomness.csproj\obj\Debug\Reflection.Randomness.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\Reflection.Randomness.csproj\obj\Debug\Reflection.Randomness.csproj.CoreCompileInputs.cache
