@@ -1,0 +1,45 @@
+{% extends '_layouts/base.html' %}
+{% load static %}
+<!-- Main Menu -->
+{% block main %}
+    {% for rubric in rubrics %}
+        <li><a href="/news/rubric/{{ rubric.id }}/">{{ rubric.name }}</a></li>
+    {% empty %}
+        <li>Sorry, we don't have rubrics yet</li>
+    {% endfor %}
+    {% if auth %}
+        <li><a href="/news/logout/">Выход</a></li>
+    {% else %}
+        <li><a href="/news/login/">Вход</a></li>
+        <li><a href="/news/register/">Регистрация</a></li>
+    {% endif %}
+{% endblock main %}
+<!-- Header -->
+{% block header %}
+    {% for elem in rubric %}
+    <a href="/news/rubric/{{ elem.id }}"><h4>{{ elem.name }}</h4></a>
+    {% endfor %}
+    {% for artEl in article %}
+        <article>
+        <div class="twelve columns">
+            <h1>{{ artEl.title }}</h1>
+            <p class="excerpt">ключевые слова: {{ artEl.keywords }}</p>
+        </div>
+        </article>
+    {% empty %}
+        <article>
+        <div class="twelve columns">
+            <h1>Нет новостей</h1>
+        </div>
+        </article>
+    {% endfor %}
+{% endblock header %}
+<!-- Section (content light) -->
+{% block section_light %}
+    {% for artEl in article %}
+        <p>
+            <img src="{% static 'images/' %}{{ artEl.image }}" alt="desc" width=400 align=left hspace=30>
+            {{ artEl.annotation }}
+        </p>
+    {% endfor %}
+{% endblock section_light %}

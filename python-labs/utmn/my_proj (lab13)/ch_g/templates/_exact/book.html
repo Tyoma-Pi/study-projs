@@ -1,0 +1,106 @@
+{% extends '_layouts/base.html' %}
+{% load static %}
+{% block head %}
+    <div class="mh-part-one i-bs">
+        <img src="{% static 'images/logo.png' %}" class="logo">
+        <h1 class="logotext i-bs unset-m">Сайт "Читай-город"</h1>
+        {% if request.user.is_authenticated %}
+            {% if request.user.first_name != '' and request.user.last_name != '' %}
+                <h2 class="cabinettext-2 i-bs unset-m">| &nbsp; &nbsp; &nbsp;{{ request.user.first_name }} {{ request.user.last_name }}</h2>
+            {% else %}
+                <h2 class="cabinettext-2 i-bs unset-m">| &nbsp; &nbsp; &nbsp;{{ request.user }}</h2>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="mh-part-two i-bs">
+        {% if request.user.is_authenticated %}
+            <a href="/ch-g.ru/cabinet/{{ request.user.id }}/" class="mya"><p class="cabinettext-1 i-bs unset-m">Личный кабинет</p></a>
+            <a href="/ch-g.ru/logout/" class="mya"><p class="cabinettext-1 i-bs unset-m">Выход</p></a>
+        {% else %}
+            <a href="/ch-g.ru/login/" class="mya"><p class="cabinettext-1 i-bs unset-m">Вход</p></a>
+            <a href="/ch-g.ru/register/" class="mya"><p class="cabinettext-1 i-bs unset-m">Регистрация</p></a>
+        {% endif %}
+    </div>
+{% endblock head %}
+{% block sidebar %}
+    <li class="myli lst-none"><a href="/ch-g.ru/" class="mya">Главная</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/cabinet/{{ request.user.id }}/favourites/" class="mya">Избранное</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/books/" class="mya">Все книги</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/authors/" class="mya">Все авторы</a></li>
+    {% if request.user.is_staff %}
+        <li class="myli lst-none farer"><a href="/ch-g.ru/add/book/" class="mya">Добавить книгу</a></li>
+        {% if request.user.is_superuser %}
+            <li class="myli lst-none"><a href="/ch-g.ru/add/author/" class="mya">Добавить автора</a></li>
+            <li class="myli lst-none"><a href="/ch-g.ru/add/language/" class="mya">Добавить язык</a></li>
+            <li class="myli lst-none"><a href="/ch-g.ru/add/genre/" class="mya">Добавить жанр</a></li>
+            <li class="myli lst-none"><a href="/ch-g.ru/add/print/" class="mya">Добавить издательство</a></li>
+        {% endif %}
+    {% endif %}
+{% endblock sidebar %}
+{% block content %}
+    <header class="mainheader">
+        {{ book.name }}
+        {% if request.user.is_superuser %}
+            <a href="/ch-g.ru/edit/book/{{ book.id }}/" class="mya h-a">Изменить</a>
+            <a href="/ch-g.ru/delete/book/{{ book.id }}/" class="mya h-a">Удалить</a>
+        {% endif %}
+    </header>
+    <section class="book-info">
+        <p class="book-name">
+            <span class="book-print">Дата выпуска: {{ book.year }}</span>
+            Издательство: {{ book.print }}
+            {% if request.user.is_superuser %}
+                <a href="/ch-g.ru/edit/print/{{ book.print.id }}/" class="mya h-a">Изменить</a>
+                <a href="/ch-g.ru/delete/print/{{ book.print.id }}/" class="mya h-a">Удалить</a>
+            {% endif %}
+        </p>
+        <p class="book-author">
+            <span class="many-elems">Автор/ы</span><br>
+            {% for author in book.authors.all %}
+                {{ author }}<br>
+            {% endfor %}
+        </p>
+        <p class="book-language">
+            <span class="many-elems">Язык/и</span><br>
+            {% for language in book.languages.all %}
+                {{ language }}
+                {% if request.user.is_superuser %}
+                    <a href="/ch-g.ru/edit/language/{{ language.id }}/" class="mya h-a">Изменить</a>
+                    <a href="/ch-g.ru/delete/language/{{ language.id }}/" class="mya h-a">Удалить</a>
+                {% endif %}<br>
+            {% endfor %}
+        </p>
+        <p class="book-language">
+            <span class="many-elems">Жанр/ы</span><br>
+            {% for genre in book.genres.all %}
+                {{ genre }}
+                {% if request.user.is_superuser %}
+                    <a href="/ch-g.ru/edit/genre/{{ genre.id }}/" class="mya h-a">Изменить</a>
+                    <a href="/ch-g.ru/delete/genre/{{ genre.id }}/" class="mya h-a">Удалить</a>
+                {% endif %}<br>
+            {% endfor %}
+        </p>
+        <p class="book-language">
+            <span class="book-print">Число скачиваний: {{ book.dlcount }}</span>
+            <span class="many-elems">Описание</span><br>
+            {{ book.description }}
+        </p>
+        <p class="book-genre">
+            <span class="book-print">В избранных: {{ fav_count }}</span>
+            ISBN: {{ book.isbn }}
+        </p>
+    </section>
+    {% if request.user.is_authenticated %}
+        <span class="book-print">
+            {% if fav %}
+                <a href="/ch-g.ru/cabinet/{{ request.user.id }}/fromfavs/{{ book.id }}/" class="mya h-a">Удалить из избранных</a>
+            {% else %}
+                <a href="/ch-g.ru/cabinet/{{ request.user.id }}/tofavs/{{ book.id }}/" class="mya h-a">Добавить в избранное</a>
+            {% endif %}
+        </span>
+        <form action="/ch-g.ru/book/{{ book.id }}/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Скачать">
+        </form>
+    {% endif %}
+{% endblock content %}

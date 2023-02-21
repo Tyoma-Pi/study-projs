@@ -1,0 +1,14 @@
+{% extends '_layouts/base.html' %}
+{% load static %}
+<!-- Header -->
+{% block header %}
+    <h1>{{ header }}</h1>
+{% endblock header %}
+<!-- Section (content main) -->
+{% block section_main %}
+          <form action="/news/logout/" method="post">
+              {% csrf_token %}
+              <p>Вы уверены, что хотите выйти?</p>
+              <input type="submit" value="Да, выйти">
+          </form>
+{% endblock section_main %}

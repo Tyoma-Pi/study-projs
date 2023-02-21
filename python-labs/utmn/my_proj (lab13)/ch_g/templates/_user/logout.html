@@ -1,0 +1,19 @@
+{% extends '_layouts/base.html' %}
+{% load static %}
+{% block head %}
+    <div class="mh-part-one i-bs">
+        <img src="{% static 'images/logo.png' %}" class="logo">
+        <h1 class="logotext i-bs unset-m">Сайт "Читай-город"</h1>
+    </div>
+{% endblock head %}
+{% block sidebar %}
+    <li class="myli lst-none"><a href="/ch-g.ru/" class="mya">Главная</a></li>
+{% endblock sidebar %}
+{% block content %}
+    <header class="mainheader">{{ header }}</header>
+    <form action="/ch-g.ru/logout/" method="post">
+        {% csrf_token %}
+        <p>Вы уверены, что хотите выйти?</p>
+        <input type="submit" value="Да, выйти">
+    </form>
+{% endblock content %}

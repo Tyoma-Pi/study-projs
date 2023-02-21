@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'stylesheets/myss.css' %}">
+        <!-- title block -->
+        <title>Читай-Город</title>
+    </head>
+    <body>
+        <!-- head block -->
+        <header class="myheader background-1">
+            {% block head %}{% endblock head %}
+        </header>
+        <div class="am-part i-bs">
+            <!-- sidebar block -->
+            <aside class="myaside i-bs unset-m">
+                <ul class="myul i-bs">
+                    {% block sidebar %}{% endblock sidebar %}
+                </ul>
+            </aside>
+            <!-- content block -->
+            <main class="mymain i-bs unset-m">
+                {% block content %}{% endblock content %}
+            </main>
+        </div>
+        <!-- footer block -->
+        <footer class="myfooter background-1">
+            <div class="for-f">Совпадения с другими компаниями/сайтами случайны.
+            <span class="my-cr">ООО "ПищАА" &copy; 2022 — {% now "Y" %}</span></div>
+            <!-- {% block footer %}{% endblock footer %} -->
+        </footer>
+    </body>
+</html>

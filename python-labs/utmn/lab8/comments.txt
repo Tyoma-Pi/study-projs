@@ -1,0 +1,9 @@
+virtualenv
+virtualenv-win
+virtualenvwrapper
+
+in virtual environment, in Django project install Django again and then startapp
+
+move views to "project" folder
+
+then runserver

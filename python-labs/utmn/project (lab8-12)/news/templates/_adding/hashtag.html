@@ -1,0 +1,12 @@
+{% extends '_layouts/base.html' %}
+{% load static %}
+{% block header %}
+    <h1>Добавить хештег</h1>
+{% endblock header %}
+{% block section_main %}
+    <form action="/news/add/hashtag/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Добавить">
+    </form>
+{% endblock section_main %}

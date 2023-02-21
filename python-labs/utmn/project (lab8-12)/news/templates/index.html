@@ -1,0 +1,91 @@
+{% extends '_layouts/base.html' %}
+{% load static %}
+<!-- Main Menu -->
+{% block main %}
+    {% for rubric in rubrics %}
+        <li><a href="/news/rubric/{{ rubric.id }}/">{{ rubric.name }}</a></li>
+    {% empty %}
+        <li>Sorry, we don't have rubrics yet</li>
+    {% endfor %}
+    {% if auth %}
+        <li><a href="/news/logout/">Выход</a></li>
+    {% else %}
+        <li><a href="/news/login/">Вход</a></li>
+        <li><a href="/news/register/">Регистрация</a></li>
+    {% endif %}
+{% endblock main %}
+<!-- Header (featured posts) -->
+{% block header %}
+    <h1>{{ header }}</h1>
+{% endblock header %}
+<!-- Section (content main) -->
+{% block section_main %}
+    <section class="eight columns">
+        {% for article in articles %}
+            <article class="blog_post">
+                <div class="three columns">
+                    <a href="/news/article/{{ article.id }}/" class="th"><img src="{% static 'images/' %}{{ article.image }}" alt="desc" /></a>
+                </div>
+                <div class="nine columns">
+                    <a href="/news/article/{{ article.id }}/"><h4>{{ article.title }}</h4></a>
+                    <p>{{ article.keywords }}</p>
+                    {% if request.user.is_staff %}
+                    <!--<div><a href="/news/article/edit/{{ article.id }}/">Изменить</a></div>-->
+                    <div><a href="/news/article/delete/{{ article.id }}/">Удалить</a></div>
+                    {% endif %}
+                </div>
+            </article>
+        {% empty %}
+            <article class="blog_post">
+                <div class="nine columns">
+                    <h4>Sorry, we don't have articles yet</h4>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+    {% if request.user.is_staff %}
+    <section class="four columns">
+        <h3> &nbsp; </h3>
+        <div class="panel">
+            <h3>Админ-панель</h3>
+            <ul class="accordion">
+                <li class="active">
+                    <div class="title">
+                        <a href="/news/add/article/"><h5>Добавить статью</h5></a>
+                    </div>
+                </li><li class="active">
+                    <div class="title">
+                        <a href="/news/add/rubric/"><h5>Добавить рубрику</h5></a>
+                    </div>
+                </li><li class="active">
+                    <div class="title">
+                        <a href="/news/add/hashtag/"><h5>Добавить хештег</h5></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    {% endif %}
+{% endblock section_main %}
+<!-- Section (images) -->
+{% block section_dark %}
+    <h2></h2>
+    <div class="two columns">
+        <img src="{% static 'images/thumb1.jpg' %}" alt="desc" />
+    </div>
+    <div class="two columns">
+        <img src="{% static 'images/thumb2.jpg' %}" alt="desc" />
+    </div>
+    <div class="two columns">
+        <img src="{% static 'images/thumb3.jpg' %}" alt="desc" />
+    </div>
+    <div class="two columns">
+        <img src="{% static 'images/thumb4.jpg' %}" alt="desc" />
+    </div>
+    <div class="two columns">
+        <img src="{% static 'images/thumb5.jpg' %}" alt="desc" />
+    </div>
+    <div class="two columns">
+        <img src="{% static 'images/thumb6.jpg' %}" alt="desc" />
+    </div>
+{% endblock section_dark %}

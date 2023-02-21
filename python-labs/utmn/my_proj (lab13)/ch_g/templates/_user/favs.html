@@ -1,0 +1,62 @@
+{% extends '_layouts/base.html' %}
+{% load static %}
+{% block head %}
+    <div class="mh-part-one i-bs">
+        <img src="{% static 'images/logo.png' %}" class="logo">
+        <h1 class="logotext i-bs unset-m">Сайт "Читай-город"</h1>
+        {% if request.user.first_name != '' and request.user.last_name != '' %}
+            <h2 class="cabinettext-2 i-bs unset-m">| &nbsp; &nbsp; &nbsp;{{ request.user.first_name }} {{ request.user.last_name }}</h2>
+        {% else %}
+            <h2 class="cabinettext-2 i-bs unset-m">| &nbsp; &nbsp; &nbsp;{{ request.user }}</h2>
+        {% endif %}
+    </div>
+    <div class="mh-part-two i-bs">
+        <a href="/ch-g.ru/cabinet/{{ request.user.id }}/" class="mya"><p class="cabinettext-1 i-bs unset-m">Личный кабинет</p></a>
+        <a href="/ch-g.ru/logout/" class="mya"><p class="cabinettext-1 i-bs unset-m">Выход</p></a>
+    </div>
+{% endblock head %}
+{% block sidebar %}
+    <li class="myli lst-none"><a href="/ch-g.ru/" class="mya">Главная</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/books/" class="mya">Все книги</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/authors/" class="mya">Все авторы</a></li>
+{% endblock sidebar %}
+{% block content %}
+    <header class="mainheader">
+        {{ header_text }}
+    </header>
+    {% for favbook in favs %}
+        <section class="book-info">
+            <h2 class="book-name">
+                <span class="book-year">Дата выпуска: {{ favbook.books.year }}</span>
+                <a href="/ch-g.ru/book/{{ favbook.books.id }}/" class="mya">{{ favbook.books.name }}</a>
+                {% if request.user.is_superuser %}
+                    <a href="/ch-g.ru/edit/book/{{ favbook.books.id }}/" class="mya h-a">Изменить</a>
+                    <a href="/ch-g.ru/delete/book/{{ favbook.books.id }}/" class="mya h-a">Удалить</a>
+                {% endif %}
+            </h2>
+            <p class="book-author">
+                <span class="book-print">Издательство: {{ favbook.books.print }}</span>
+                <span class="many-elems">Автор/ы</span><br>
+                {% for author in favbook.books.authors.all %}
+                    <a href="/ch-g.ru/author/{{ author.id }}/" class="mya">{{ author }}</a><br>
+                {% endfor %}
+            </p>
+            <p class="book-language">
+                <span class="many-elems">Язык/и</span><br>
+                {% for language in favbook.books.languages.all %}
+                    {{ language }}<br>
+                {% endfor %}
+            </p>
+            <p class="book-genre">
+                <span class="many-elems">Жанр/ы</span><br>
+                {% for genre in favbook.books.genres.all %}
+                    {{ genre }}<br>
+                {% endfor %}
+            </p>
+        </section>
+    {% empty %}
+        <section class="book-info">
+            <h2 class="book-name">Избранных книг нет</h2>
+        </section>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,56 @@
+{% extends '_layouts/base.html' %}
+{% load static %}
+{% block head %}
+    <div class="mh-part-one i-bs">
+        <img src="{% static 'images/logo.png' %}" class="logo">
+        <h1 class="logotext i-bs unset-m">Сайт "Читай-город"</h1>
+        {% if request.user.is_authenticated %}
+            {% if request.user.first_name != '' and request.user.last_name != '' %}
+                <h2 class="cabinettext-2 i-bs unset-m">| &nbsp; &nbsp; &nbsp;{{ request.user.first_name }} {{ request.user.last_name }}</h2>
+            {% else %}
+                <h2 class="cabinettext-2 i-bs unset-m">| &nbsp; &nbsp; &nbsp;{{ request.user }}</h2>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="mh-part-two i-bs">
+        {% if request.user.is_authenticated %}
+            <a href="/ch-g.ru/cabinet/{{ request.user.id }}/" class="mya"><p class="cabinettext-1 i-bs unset-m">Личный кабинет</p></a>
+            <a href="/ch-g.ru/logout/" class="mya"><p class="cabinettext-1 i-bs unset-m">Выход</p></a>
+        {% else %}
+            <a href="/ch-g.ru/login/" class="mya"><p class="cabinettext-1 i-bs unset-m">Вход</p></a>
+            <a href="/ch-g.ru/register/" class="mya"><p class="cabinettext-1 i-bs unset-m">Регистрация</p></a>
+        {% endif %}
+    </div>
+{% endblock head %}
+{% block sidebar %}
+    <li class="myli lst-none"><a href="/ch-g.ru/" class="mya">Главная</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/cabinet/{{ request.user.id }}/favourites/" class="mya">Избранное</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/books/" class="mya">Все книги</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/authors/" class="mya">Все авторы</a></li>
+    {% if request.user.is_staff %}
+        <li class="myli lst-none farer"><a href="/ch-g.ru/add/book/" class="mya">Добавить книгу</a></li>
+        {% if request.user.is_superuser %}
+            <li class="myli lst-none"><a href="/ch-g.ru/add/author/" class="mya">Добавить автора</a></li>
+            <li class="myli lst-none"><a href="/ch-g.ru/add/language/" class="mya">Добавить язык</a></li>
+            <li class="myli lst-none"><a href="/ch-g.ru/add/genre/" class="mya">Добавить жанр</a></li>
+            <li class="myli lst-none"><a href="/ch-g.ru/add/print/" class="mya">Добавить издательство</a></li>
+        {% endif %}
+    {% endif %}
+{% endblock sidebar %}
+{% block content %}
+    <header class="mainheader">
+        {{ author.fsl_name }}
+        {% if request.user.is_superuser %}
+            <a href="/ch-g.ru/edit/author/{{ author.id }}/" class="mya h-a">Изменить</a>
+            <a href="/ch-g.ru/delete/author/{{ author.id }}/" class="mya h-a">Удалить</a>
+        {% endif %}
+    </header>
+    <p class="book-author">
+        <span class="book-print">Дата смерти: {{ author.deathday }}</span>
+        Дата рождения: {{ author.birthday }}
+    </p>
+    <p class="book-genre">
+        <span class="many-elems">Краткое описание</span><br>
+            {{ author.short_info }}
+    </p>
+{% endblock content %}

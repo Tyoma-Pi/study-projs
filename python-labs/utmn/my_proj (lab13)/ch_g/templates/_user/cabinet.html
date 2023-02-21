@@ -1,0 +1,61 @@
+{% extends '_layouts/base.html' %}
+{% load static %}
+{% block head %}
+    <div class="mh-part-one i-bs">
+        <img src="{% static 'images/logo.png' %}" class="logo">
+        <h1 class="logotext i-bs unset-m">Сайт "Читай-город"</h1>
+        {% if request.user.is_authenticated %}
+            {% if request.user.first_name != '' and request.user.last_name != '' %}
+                <h2 class="cabinettext-2 i-bs unset-m">| &nbsp; &nbsp; &nbsp;{{ request.user.first_name }} {{ request.user.last_name }}</h2>
+            {% else %}
+                <h2 class="cabinettext-2 i-bs unset-m">| &nbsp; &nbsp; &nbsp;{{ request.user }}</h2>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="mh-part-two i-bs">
+        {% if request.user.is_authenticated %}
+            <a href="/ch-g.ru/logout/" class="mya"><p class="cabinettext-1 i-bs unset-m">Выход</p></a>
+        {% endif %}
+    </div>
+{% endblock head %}
+{% block sidebar %}
+    <li class="myli lst-none"><a href="/ch-g.ru/" class="mya">Главная</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/cabinet/{{ request.user.id }}/favourites/" class="mya">Избранное</a></li>
+{% endblock sidebar %}
+{% block content %}
+    <header class="mainheader">
+        {{ userinfo.user.username }}
+    </header>
+    <section class="book-info">
+        <p class="book-name">
+            <span class="book-print">Изображение: <img src="{% static 'cabinets/' %}{{ userinfo.photo }}" class="my-img"></span>
+            Фамилия: {{ userinfo.user.last_name }}
+        </p>
+        <p class="book-name">
+            Имя: {{ userinfo.user.first_name }}
+        </p>
+        <p class="book-name">
+            Город: {{ userinfo.city }}
+        </p>
+        <p class="book-name">
+            Дата рождения: {{ userinfo.birthday }}
+        </p>
+        <p class="book-name">
+            О себе: {{ userinfo.about }}
+        </p>
+        <p class="book-genre">
+                <a href="/ch-g.ru/cabinet/editprof/{{ request.user.id }}/" class="mya h-a">Изменить данные о себе</a>
+                <a href="/ch-g.ru/cabinet/editauth/{{ request.user.id }}/" class="mya h-a">Изменить данные для авторизации</a>
+        </p>
+    </section>
+    {% for user in users %}
+        <p>
+            {{ user }}
+            {% if user.is_staff %}
+                <a href="/ch-g.ru/cabinet/{{ request.user.id }}/makestaff/{{ user.id }}/0/" class="mya h-a">Сделать обычным пользователем</a>
+            {% else %}
+                <a href="/ch-g.ru/cabinet/{{ request.user.id }}/makestaff/{{ user.id }}/1/" class="mya h-a">Сделать персоналом</a>
+            {% endif %}
+        </p>
+    {% endfor %}
+{% endblock content %}

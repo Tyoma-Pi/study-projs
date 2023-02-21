@@ -1,0 +1,182 @@
+
+body
+{
+    background: #F3F3F3;
+    margin: unset;
+    font-family: sans-serif;
+    color: #1D3E13;
+}
+
+/* Universal classes */
+.background-1
+{
+    background: #EBE5D7;
+    box-shadow: 0px 4px 10px #829D70,
+                0px -4px 10px #829D70;
+}
+.i-bs
+{
+    display: inline-block;
+}
+.unset-m
+{
+    margin: unset;
+}
+.lst-none
+{
+    list-style-type: none;
+}
+
+/* Non-Universal classes */
+.mh-part-two
+{
+    float: right;
+}
+.logo
+{
+    width: 100px;
+    margin: 5px 20px;
+    float: left;
+}
+.logotext
+{
+    margin-top: 28px;
+    font-size: 30px;
+}
+.cabinettext-1
+{
+    margin-top: 30px;
+    margin-right: 20px;
+    font-size: 24px;
+}
+.cabinettext-2
+{
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 24px;
+}
+.cabinettext-2:hover
+{
+    color: #1D6413;
+}
+.am-part
+{
+    width: 100%;
+    height: 100%;
+}
+.myaside
+{
+    float: left;
+    margin: 40px;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 3px 3px 9px #DEAD85,
+                inset -3px -3px 9px #DEAD85,
+                3px -3px 9px #DEAD85,
+                inset -3px 3px 9px #DEAD85,
+                -3px 3px 9px #DEAD85,
+                inset 3px -3px 9px #DEAD85,
+                -3px -3px 9px #DEAD85,
+                inset 3px 3px 9px #DEAD85;
+}
+.myul
+{
+    padding: 0px 20px;
+}
+.myli
+{
+    font-size: 24px;
+    line-height: 36px;
+}
+.farer
+{
+    margin-top: 16px;
+}
+.mymain
+{
+    float: right;
+    margin: 40px 500px 40px 0px;
+    width: 800px;
+    border-radius: 20px 20px 20px 20px;
+    background: #EBE5D7;
+    box-shadow: 2px 2px 8px #829D70,
+                2px -2px 8px #829D70,
+                -2px 2px 8px #829D70,
+                -2px -2px 8px #829D70;
+    padding: 20px;
+}
+.mainheader
+{
+    margin: 16px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+.mya, .mya:hover, .mya:active, .mya:focus
+{
+    color: #1D3E13;
+    text-decoration: none;
+}
+.book-info
+{
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 2px 2px 8px #DEAD85,
+                inset -2px -2px 8px #DEAD85,
+                2px -2px 8px #DEAD85,
+                inset -2px 2px 8px #DEAD85,
+                -2px 2px 8px #DEAD85,
+                inset 2px -2px 8px #DEAD85,
+                -2px -2px 8px #DEAD85,
+                inset 2px 2px 8px #DEAD85;
+}
+.book-name
+{
+    padding: 16px 16px 0px 16px;
+}
+.book-year, .book-print, .my-cr
+{
+    float: right;
+}
+.book-year
+{
+    font-weight: normal;
+    font-size: 16px;
+}
+.book-author, .book-language
+{
+    padding: 0px 16px;
+}
+/*.book-print
+{
+}*/
+.book-genre
+{
+    padding: 0px 16px 16px 16px;
+}
+.many-elems
+{
+    text-decoration: underline;
+}
+.myfooter
+{
+    width: 100%;
+}
+.for-f
+{
+    padding: 14px;
+}
+form label, form input
+{
+    display: block;
+    margin-top: 16px;
+}
+.h-a
+{
+    font-size: 16px;
+    font-weight: normal;
+    border: 1px dotted #1D3E13
+}
+.my-img
+{
+    max-width: 220px;
+    max-height: 140px;
+}

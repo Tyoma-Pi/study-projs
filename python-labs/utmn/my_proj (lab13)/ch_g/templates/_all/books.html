@@ -1,0 +1,84 @@
+{% extends '_layouts/base.html' %}
+{% load static %}
+{% block head %}
+    <div class="mh-part-one i-bs">
+        <img src="{% static 'images/logo.png' %}" class="logo">
+        <h1 class="logotext i-bs unset-m">Сайт "Читай-город"</h1>
+        {% if request.user.is_authenticated %}
+            {% if request.user.first_name != '' and request.user.last_name != '' %}
+                <h2 class="cabinettext-2 i-bs unset-m">| &nbsp; &nbsp; &nbsp;{{ request.user.first_name }} {{ request.user.last_name }}</h2>
+            {% else %}
+                <h2 class="cabinettext-2 i-bs unset-m">| &nbsp; &nbsp; &nbsp;{{ request.user }}</h2>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="mh-part-two i-bs">
+        {% if request.user.is_authenticated %}
+            <a href="/ch-g.ru/cabinet/{{ request.user.id }}/" class="mya"><p class="cabinettext-1 i-bs unset-m">Личный кабинет</p></a>
+            <a href="/ch-g.ru/logout/" class="mya"><p class="cabinettext-1 i-bs unset-m">Выход</p></a>
+        {% else %}
+            <a href="/ch-g.ru/login/" class="mya"><p class="cabinettext-1 i-bs unset-m">Вход</p></a>
+            <a href="/ch-g.ru/register/" class="mya"><p class="cabinettext-1 i-bs unset-m">Регистрация</p></a>
+        {% endif %}
+    </div>
+{% endblock head %}
+{% block sidebar %}
+    <li class="myli lst-none"><a href="/ch-g.ru/" class="mya">Главная</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/cabinet/{{ request.user.id }}/favourites/" class="mya">Избранное</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/books/" class="mya">Все книги</a></li>
+    <li class="myli lst-none"><a href="/ch-g.ru/authors/" class="mya">Все авторы</a></li>
+    {% if request.user.is_staff %}
+        <li class="myli lst-none farer"><a href="/ch-g.ru/add/book/" class="mya">Добавить книгу</a></li>
+        {% if request.user.is_superuser %}
+            <li class="myli lst-none"><a href="/ch-g.ru/add/author/" class="mya">Добавить автора</a></li>
+            <li class="myli lst-none"><a href="/ch-g.ru/add/language/" class="mya">Добавить язык</a></li>
+            <li class="myli lst-none"><a href="/ch-g.ru/add/genre/" class="mya">Добавить жанр</a></li>
+            <li class="myli lst-none"><a href="/ch-g.ru/add/print/" class="mya">Добавить издательство</a></li>
+        {% endif %}
+    {% endif %}
+{% endblock sidebar %}
+{% block content %}
+    <header class="mainheader">Все книги</header>
+    <p class="book-author">
+        <form action="/ch-g.ru/books/" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Отфильтровать">
+        </form>
+    </p>
+    {% for book in books %}
+        <section class="book-info">
+            <h2 class="book-name">
+                <span class="book-year">Дата выпуска: {{ book.year }}</span>
+                <a href="/ch-g.ru/book/{{ book.id }}/" class="mya">{{ book.name }}</a>
+                {% if request.user.is_superuser %}
+                    <a href="/ch-g.ru/edit/book/{{ book.id }}/" class="mya h-a">Изменить</a>
+                    <a href="/ch-g.ru/delete/book/{{ book.id }}/" class="mya h-a">Удалить</a>
+                {% endif %}
+            </h2>
+            <p class="book-author">
+                <span class="book-print">Издательство: {{ book.print }}</span>
+                <span class="many-elems">Автор/ы</span><br>
+                {% for author in book.authors.all %}
+                    <a href="/ch-g.ru/author/{{ author.id }}/" class="mya">{{ author }}</a><br>
+                {% endfor %}
+            </p>
+            <p class="book-language">
+                <span class="many-elems">Язык/и</span><br>
+                {% for language in book.languages.all %}
+                    {{ language }}<br>
+                {% endfor %}
+            </p>
+            <p class="book-genre">
+                <span class="many-elems">Жанр/ы</span><br>
+                {% for genre in book.genres.all %}
+                    {{ genre }}<br>
+                {% endfor %}
+            </p>
+        </section>
+    {% empty %}
+        <section class="book-info">
+            <h2 class="book-name">Извините, сейчас у нас нет информации о книгах</h2>
+        </section>
+    {% endfor %}
+{% endblock content %}
