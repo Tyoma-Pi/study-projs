@@ -1,5 +1,5 @@
 # my-projs
 
-Данный репозиторий предназначен для работ с платформы онлайн-курсов "Ulearn.me"<br>
+Данный репозиторий предназначен для всех задач с учёбы
 ———<br>
-This repository is used for works from platform with online courses "Ulearn.me"
+This repository is used for all the works from studying
