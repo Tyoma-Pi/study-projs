@@ -1,5 +1,5 @@
 # android-studio-labs
 
-Данная папка предназначена для работ в Android Studio<br>
+Данный репозиторий предназначен для работ в Android Studio<br>
 ———<br>
-This folder is used for works in Android Studio
+This repository is used for works in Android Studio
