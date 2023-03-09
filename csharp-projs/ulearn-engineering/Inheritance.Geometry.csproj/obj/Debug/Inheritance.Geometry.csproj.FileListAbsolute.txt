@@ -9,3 +9,8 @@ C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\Inheritance.Geom
 C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Geometry.csproj.CopyComplete
 C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Geometry.exe
 C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Geometry.pdb
+C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\1 семак\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Geometry.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\1 семак\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Geometry.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\1 семак\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Geometry.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\1 семак\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Geometry.exe
+C:\Users\User\Desktop\Mine\University\РТиППО (3 курс)\1 семак\Inheritance.Geometry.csproj\obj\Debug\Inheritance.Geometry.pdb

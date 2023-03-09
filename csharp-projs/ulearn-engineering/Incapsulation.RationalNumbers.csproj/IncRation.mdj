@@ -61,7 +61,7 @@
 											"font": "Arial;13;1",
 											"left": 581,
 											"top": 199,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"text": "Rational"
 										},
@@ -96,7 +96,7 @@
 									"font": "Arial;13;0",
 									"left": 576,
 									"top": 192,
-									"width": 305.75,
+									"width": 328.6650390625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE+AfE5jh5UHk="
@@ -133,7 +133,7 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 222,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"text": "+Numerator: int",
 											"horizontalAlignment": 0
@@ -150,7 +150,7 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 237,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"text": "+Denominator: int",
 											"horizontalAlignment": 0
@@ -167,7 +167,7 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 252,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"text": "«get»+IsNan: bool",
 											"horizontalAlignment": 0
@@ -176,7 +176,7 @@
 									"font": "Arial;13;0",
 									"left": 576,
 									"top": 217,
-									"width": 305.75,
+									"width": 328.6650390625,
 									"height": 53
 								},
 								{
@@ -201,7 +201,7 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 275,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"text": "+Rational(numerat: int, denominat: int = 1)",
 											"horizontalAlignment": 0
@@ -218,9 +218,9 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 290,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
-											"text": "+UpdateSign()",
+											"text": "+UpdateSign(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -235,9 +235,9 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 305,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
-											"text": "+ReduceFract()",
+											"text": "+ReduceFract(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -252,10 +252,10 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 320,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"underline": true,
-											"text": "«operator»+\"+\"(R1: Rational, R2: Rational)",
+											"text": "«operator»+\"+\"(R1: Rational, R2: Rational): Rational",
 											"horizontalAlignment": 0
 										},
 										{
@@ -270,10 +270,10 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 335,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"underline": true,
-											"text": "«operator»+\"-\"(R1: Rational, R2: Rational)",
+											"text": "«operator»+\"-\"(R1: Rational, R2: Rational): Rational",
 											"horizontalAlignment": 0
 										},
 										{
@@ -288,10 +288,10 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 350,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"underline": true,
-											"text": "«operator»+\"*\"(R1: Rational, R2: Rational)",
+											"text": "«operator»+\"*\"(R1: Rational, R2: Rational): Rational",
 											"horizontalAlignment": 0
 										},
 										{
@@ -306,10 +306,10 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 365,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"underline": true,
-											"text": "«operator»+\"/\"(R1: Rational, R2: Rational)",
+											"text": "«operator»+\"/\"(R1: Rational, R2: Rational): Rational",
 											"horizontalAlignment": 0
 										},
 										{
@@ -324,10 +324,10 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 380,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"underline": true,
-											"text": "«operator»+implicit \"Rational\"(R: int)",
+											"text": "«operator»+\"Rational\"(R: int): implicit",
 											"horizontalAlignment": 0
 										},
 										{
@@ -342,10 +342,10 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 395,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"underline": true,
-											"text": "«operator»+implicit \"double\"(R: Rational)",
+											"text": "«operator»+\"double\"(R: Rational): implicit",
 											"horizontalAlignment": 0
 										},
 										{
@@ -360,17 +360,17 @@
 											"font": "Arial;13;0",
 											"left": 581,
 											"top": 410,
-											"width": 295.75,
+											"width": 318.6650390625,
 											"height": 13,
 											"underline": true,
-											"text": "«operator»+explicit \"int\"(R: Rational)",
+											"text": "«operator»+\"int\"(R: Rational): explicit",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 576,
 									"top": 270,
-									"width": 305.75,
+									"width": 328.6650390625,
 									"height": 158
 								},
 								{
@@ -410,7 +410,7 @@
 							"containerChangeable": true,
 							"left": 576,
 							"top": 192,
-							"width": 305.75,
+							"width": 328.6650390625,
 							"height": 236,
 							"nameCompartment": {
 								"$ref": "AAAAAAGE+AfE5jh48Sg="
@@ -950,8 +950,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 710,
-									"top": 446,
+									"left": 716,
+									"top": 445,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -971,8 +971,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 695,
-									"top": 445,
+									"left": 701,
+									"top": 444,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -992,8 +992,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 739,
-									"top": 447,
+									"left": 745,
+									"top": 448,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -1011,7 +1011,7 @@
 								"$ref": "AAAAAAGE+BDrqgn+Kis="
 							},
 							"lineStyle": 1,
-							"points": "724:479;726:428",
+							"points": "730:479;733:428",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGE+BdQdAuDwSE="
@@ -1098,7 +1098,19 @@
 							"_parent": {
 								"$ref": "AAAAAAGE+AfE5Th1Jng="
 							},
-							"name": "UpdateSign"
+							"name": "UpdateSign",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxBg31b0K4vU=",
+									"_parent": {
+										"$ref": "AAAAAAGE+BrSrT2D+pc="
+									},
+									"name": "type",
+									"type": "void",
+									"direction": "return"
+								}
+							]
 						},
 						{
 							"_type": "UMLOperation",
@@ -1106,7 +1118,19 @@
 							"_parent": {
 								"$ref": "AAAAAAGE+AfE5Th1Jng="
 							},
-							"name": "ReduceFract"
+							"name": "ReduceFract",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxBhzJ70SWhU=",
+									"_parent": {
+										"$ref": "AAAAAAGE+BrYUz2KoTQ="
+									},
+									"name": "type",
+									"type": "void",
+									"direction": "return"
+								}
+							]
 						},
 						{
 							"_type": "UMLOperation",
@@ -1139,6 +1163,18 @@
 									"type": {
 										"$ref": "AAAAAAGE+AfE5Th1Jng="
 									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxBjSzb0Wkpo=",
+									"_parent": {
+										"$ref": "AAAAAAGE+Bv/VD2eoKY="
+									},
+									"name": "type",
+									"type": {
+										"$ref": "AAAAAAGE+AfE5Th1Jng="
+									},
+									"direction": "return"
 								}
 							]
 						},
@@ -1173,6 +1209,18 @@
 									"type": {
 										"$ref": "AAAAAAGE+AfE5Th1Jng="
 									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxBlVgb0bDek=",
+									"_parent": {
+										"$ref": "AAAAAAGE+CHPWD21EJA="
+									},
+									"name": "type",
+									"type": {
+										"$ref": "AAAAAAGE+AfE5Th1Jng="
+									},
+									"direction": "return"
 								}
 							]
 						},
@@ -1207,6 +1255,18 @@
 									"type": {
 										"$ref": "AAAAAAGE+AfE5Th1Jng="
 									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxBlba70fl98=",
+									"_parent": {
+										"$ref": "AAAAAAGE+CHVvz3ClAQ="
+									},
+									"name": "type",
+									"type": {
+										"$ref": "AAAAAAGE+AfE5Th1Jng="
+									},
+									"direction": "return"
 								}
 							]
 						},
@@ -1241,6 +1301,18 @@
 									"type": {
 										"$ref": "AAAAAAGE+AfE5Th1Jng="
 									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxBljyL0j5lo=",
+									"_parent": {
+										"$ref": "AAAAAAGE+CHXoj3P0ko="
+									},
+									"name": "type",
+									"type": {
+										"$ref": "AAAAAAGE+AfE5Th1Jng="
+									},
+									"direction": "return"
 								}
 							]
 						},
@@ -1250,7 +1322,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGE+AfE5Th1Jng="
 							},
-							"name": "implicit \"Rational\"",
+							"name": "\"Rational\"",
 							"stereotype": "operator",
 							"isStatic": true,
 							"parameters": [
@@ -1262,6 +1334,16 @@
 									},
 									"name": "R",
 									"type": "int"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxBlszb0n/yM=",
+									"_parent": {
+										"$ref": "AAAAAAGE+CJolT3fuWs="
+									},
+									"name": "type",
+									"type": "implicit",
+									"direction": "return"
 								}
 							]
 						},
@@ -1271,7 +1353,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGE+AfE5Th1Jng="
 							},
-							"name": "implicit \"double\"",
+							"name": "\"double\"",
 							"stereotype": "operator",
 							"isStatic": true,
 							"parameters": [
@@ -1285,6 +1367,16 @@
 									"type": {
 										"$ref": "AAAAAAGE+AfE5Th1Jng="
 									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxBl0cL0rM2k=",
+									"_parent": {
+										"$ref": "AAAAAAGE+CNcBz4VeMs="
+									},
+									"name": "type",
+									"type": "implicit",
+									"direction": "return"
 								}
 							]
 						},
@@ -1294,7 +1386,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGE+AfE5Th1Jng="
 							},
-							"name": "explicit \"int\"",
+							"name": "\"int\"",
 							"stereotype": "operator",
 							"isStatic": true,
 							"parameters": [
@@ -1308,6 +1400,16 @@
 									"type": {
 										"$ref": "AAAAAAGE+AfE5Th1Jng="
 									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxBl4lb0v/nA=",
+									"_parent": {
+										"$ref": "AAAAAAGE+CNi4D4fb5s="
+									},
+									"name": "type",
+									"type": "explicit",
+									"direction": "return"
 								}
 							]
 						}
