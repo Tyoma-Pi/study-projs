@@ -1,0 +1,403 @@
+{
+	"_type": "Project",
+	"_id": "AAAAAAFF+h6SjaM2Hec=",
+	"name": "Untitled",
+	"ownedElements": [
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFF+qBWK6M3Z8Y=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Model",
+			"ownedElements": [
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "AAAAAAFF+qBtyKM79qY=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Main",
+					"defaultDiagram": true,
+					"ownedViews": [
+						{
+							"_type": "UMLClassView",
+							"_id": "AAAAAAGGxHlmi2+HLng=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"model": {
+								"$ref": "AAAAAAGGxHlmim+FIrQ="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAGGxHlmi2+IveU=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHlmi2+HLng="
+									},
+									"model": {
+										"$ref": "AAAAAAGGxHlmim+FIrQ="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGGxHlmi2+JiXw=",
+											"_parent": {
+												"$ref": "AAAAAAGGxHlmi2+IveU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"top": -16,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGGxHlmi2+Ku0M=",
+											"_parent": {
+												"$ref": "AAAAAAGGxHlmi2+IveU="
+											},
+											"font": "Arial;13;1",
+											"left": 533,
+											"top": 367,
+											"width": 387.1943359375,
+											"height": 13,
+											"text": "Analysis"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGGxHlmi2+L6Kg=",
+											"_parent": {
+												"$ref": "AAAAAAGGxHlmi2+IveU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"top": -16,
+											"width": 73.67724609375,
+											"height": 13,
+											"text": "(from Model)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGGxHlmi2+MupI=",
+											"_parent": {
+												"$ref": "AAAAAAGGxHlmi2+IveU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"top": -16,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 528,
+									"top": 360,
+									"width": 397.1943359375,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAGGxHlmi2+JiXw="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAGGxHlmi2+Ku0M="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAGGxHlmi2+L6Kg="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAGGxHlmi2+MupI="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAGGxHlmi2+NRiY=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHlmi2+HLng="
+									},
+									"model": {
+										"$ref": "AAAAAAGGxHlmim+FIrQ="
+									},
+									"font": "Arial;13;0",
+									"left": 528,
+									"top": 385,
+									"width": 397.1943359375,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAGGxHlmi2+OpiM=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHlmi2+HLng="
+									},
+									"model": {
+										"$ref": "AAAAAAGGxHlmim+FIrQ="
+									},
+									"subViews": [
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGxHmxnm+7UOQ=",
+											"_parent": {
+												"$ref": "AAAAAAGGxHlmi2+OpiM="
+											},
+											"model": {
+												"$ref": "AAAAAAGGxHmxmm+4H9s="
+											},
+											"font": "Arial;13;0",
+											"left": 533,
+											"top": 400,
+											"width": 387.1943359375,
+											"height": 13,
+											"underline": true,
+											"text": "+Pairs<T>(data: this IEnumerable<T>): IEnumerable<Tuple<T, T>>",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGxHrxxm/W8gk=",
+											"_parent": {
+												"$ref": "AAAAAAGGxHlmi2+OpiM="
+											},
+											"model": {
+												"$ref": "AAAAAAGGxHrxw2/P7uI="
+											},
+											"font": "Arial;13;0",
+											"left": 533,
+											"top": 415,
+											"width": 387.1943359375,
+											"height": 13,
+											"underline": true,
+											"text": "+MaxIndex<T>(data: this IEnumerable<T>): int",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGxHvbwG/n/DA=",
+											"_parent": {
+												"$ref": "AAAAAAGGxHlmi2+OpiM="
+											},
+											"model": {
+												"$ref": "AAAAAAGGxHvbvW/gm54="
+											},
+											"font": "Arial;13;0",
+											"left": 533,
+											"top": 430,
+											"width": 387.1943359375,
+											"height": 13,
+											"underline": true,
+											"text": "+FindMaxPeriodIndex(dates: params DateTime[]): int",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGxHvdx2/03zQ=",
+											"_parent": {
+												"$ref": "AAAAAAGGxHlmi2+OpiM="
+											},
+											"model": {
+												"$ref": "AAAAAAGGxHvdxG/t56E="
+											},
+											"font": "Arial;13;0",
+											"left": 533,
+											"top": 445,
+											"width": 387.1943359375,
+											"height": 13,
+											"underline": true,
+											"text": "+FindAverageRelativeDifference(data: params double[]): double",
+											"horizontalAlignment": 0
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 528,
+									"top": 395,
+									"width": 397.1943359375,
+									"height": 68
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAGGxHlmi2+P5Gc=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHlmi2+HLng="
+									},
+									"model": {
+										"$ref": "AAAAAAGGxHlmim+FIrQ="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"top": -8,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAGGxHlmi2+QN4U=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHlmi2+HLng="
+									},
+									"model": {
+										"$ref": "AAAAAAGGxHlmim+FIrQ="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"top": -8,
+									"width": 10,
+									"height": 10
+								}
+							],
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 528,
+							"top": 360,
+							"width": 397.1943359375,
+							"height": 103,
+							"nameCompartment": {
+								"$ref": "AAAAAAGGxHlmi2+IveU="
+							},
+							"attributeCompartment": {
+								"$ref": "AAAAAAGGxHlmi2+NRiY="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAGGxHlmi2+OpiM="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAGGxHlmi2+P5Gc="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAGGxHlmi2+QN4U="
+							}
+						}
+					]
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAGGxHlmim+FIrQ=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Analysis",
+					"operations": [
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGxHmxmm+4H9s=",
+							"_parent": {
+								"$ref": "AAAAAAGGxHlmim+FIrQ="
+							},
+							"name": "Pairs<T>",
+							"isStatic": true,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxHn4Mm/AVgI=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHmxmm+4H9s="
+									},
+									"name": "data",
+									"type": "this IEnumerable<T>"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxHpSZW/GLF4=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHmxmm+4H9s="
+									},
+									"name": "type",
+									"type": "IEnumerable<Tuple<T, T>>",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGxHrxw2/P7uI=",
+							"_parent": {
+								"$ref": "AAAAAAGGxHlmim+FIrQ="
+							},
+							"name": "MaxIndex<T>",
+							"isStatic": true,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxHrxw2/QVac=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHrxw2/P7uI="
+									},
+									"name": "data",
+									"type": "this IEnumerable<T>"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxHrxw2/ReFU=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHrxw2/P7uI="
+									},
+									"name": "type",
+									"type": "int",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGxHvbvW/gm54=",
+							"_parent": {
+								"$ref": "AAAAAAGGxHlmim+FIrQ="
+							},
+							"name": "FindMaxPeriodIndex",
+							"isStatic": true,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxHvbvW/hnEM=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHvbvW/gm54="
+									},
+									"name": "dates",
+									"type": "params DateTime[]"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxHvbvW/iabo=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHvbvW/gm54="
+									},
+									"name": "type",
+									"type": "int",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGxHvdxG/t56E=",
+							"_parent": {
+								"$ref": "AAAAAAGGxHlmim+FIrQ="
+							},
+							"name": "FindAverageRelativeDifference",
+							"isStatic": true,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxHy26G//Uc8=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHvdxG/t56E="
+									},
+									"name": "data",
+									"type": "params double[]"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGxHvdxG/vUPY=",
+									"_parent": {
+										"$ref": "AAAAAAGGxHvdxG/t56E="
+									},
+									"name": "type",
+									"type": "double",
+									"direction": "return"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
