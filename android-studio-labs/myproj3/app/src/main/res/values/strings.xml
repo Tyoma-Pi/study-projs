@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">my-proj3</string>
+    <string name="numbers">1 + 2 ÷ (3 × 4)</string>
+    <string name="butM">5dp</string>
+</resources>
