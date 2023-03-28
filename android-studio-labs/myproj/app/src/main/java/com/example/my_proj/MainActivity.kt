@@ -1,10 +1,10 @@
 package com.example.my_proj
 
-import android.inputmethodservice.Keyboard
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,5 +23,13 @@ class MainActivity : AppCompatActivity() {
         myButton.setOnClickListener {
             showVal()
         }
+
+        editText.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
+                showVal()
+                return@OnKeyListener true
+            }
+            false
+        })
     }
 }

@@ -1,5 +1,28 @@
 <resources>
     <string name="app_name">my-proj3</string>
-    <string name="numbers">1 + 2 ÷ (3 × 4)</string>
-    <string name="butM">5dp</string>
+    <string name="math.operation">1 + 2 ÷ 3 × 4</string>
+    <string name="math.result">1,166666666666</string>
+    <string name="butM">10dp</string>
+    <string name="butS">80dp</string>
+    <string name="radius">100dp</string>
+    <string name="textS">36sp</string>
+    <string name="oper.dv">÷</string>
+    <string name="oper.ml">×</string>
+    <string name="oper.mn">-</string>
+    <string name="oper.pl">+</string>
+    <string name="oper.eq">=</string>
+    <string name="oper.a.c">AC</string>
+    <string name="oper.a.pm">+/-</string>
+    <string name="oper.a.pr">%</string>
+    <string name="num.0">0</string>
+    <string name="num.1">1</string>
+    <string name="num.2">2</string>
+    <string name="num.3">3</string>
+    <string name="num.4">4</string>
+    <string name="num.5">5</string>
+    <string name="num.6">6</string>
+    <string name="num.7">7</string>
+    <string name="num.8">8</string>
+    <string name="num.9">9</string>
+    <string name="num.d">,</string>
 </resources>

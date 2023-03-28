@@ -4,10 +4,10 @@
     android:shape="rectangle">
 
     <corners
-        android:radius="100dp"/>
+        android:radius="@string/radius"/>
     <solid
-        android:color="#3C3C3C"/>
+        android:color="@color/number"/>
     <size
-        android:width="90dp"
-        android:height="90dp"/>
+        android:width="@string/butS"
+        android:height="@string/butS"/>
 </shape>

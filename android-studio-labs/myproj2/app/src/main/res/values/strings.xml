@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">my-proj2</string>
+    <string name="b">знач-е перем. b</string>
+    <string name="c">знач-е перем. c</string>
+    <string name="a">знач-е перем. a</string>
+    <string name="inpD">Введите данные для вычислений</string>
+    <string name="butN">Вычислить</string>
+</resources>

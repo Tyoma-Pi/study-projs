@@ -1,260 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/black">
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:gravity="bottom">
 
     <TextView
-        android:id="@+id/MyText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:text="@string/numbers"
-        android:textColor="@color/white"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
-
-    <TableLayout
+        android:id="@+id/operats"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_margin="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        android:layout_height="90sp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/math.operation"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        android:paddingTop="36sp"
+        android:paddingEnd="20sp"
+        android:gravity="end"
+        android:ellipsize="start"
+        android:maxLines="1"
+        tools:ignore="RtlSymmetry"/>
 
-        <TableRow
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:text="@string/math.result"
+        android:fontFamily="sans-serif-light"
+        android:textSize="27sp"
+        android:textColor="@color/gray_res"
+        android:paddingEnd="20sp"
+        android:gravity="end"
+        android:ellipsize="end"
+        android:maxLines="1"
+        tools:ignore="RtlSymmetry"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:background="@color/black">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <Button
-                android:layout_column="0"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/operators_a"
-                android:gravity="center"
-                android:fontFamily="sans-serif-light"
-                android:text="C"
-                android:textSize="36dp"
-                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/but_c"
+                style="@style/opersAddB"
+                android:text="@string/oper.a.c" />
 
-            <Button
-                android:layout_column="1"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/operators_a"
-                android:gravity="center"
-                android:fontFamily="sans-serif-light"
-                android:text="+/-"
-                android:textSize="36dp"
-                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/but_pm"
+                style="@style/opersAddB"
+                android:text="@string/oper.a.pm" />
 
-            <Button
-                android:layout_column="2"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/operators_a"
-                android:gravity="center"
-                android:fontFamily="sans-serif-light"
-                android:text="%"
-                android:textSize="36dp"
-                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/but_pr"
+                style="@style/opersAddB"
+                android:text="@string/oper.a.pr" />
 
-            <Button
-                android:layout_column="3"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/operators_m"
-                android:gravity="center"
-                android:text="÷"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_dv"
+                style="@style/opersB"
+                android:text="@string/oper.dv" />
 
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:background="@color/black">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <Button
-                android:layout_column="0"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/numbers"
-                android:gravity="center"
-                android:text="7"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_7"
+                style="@style/numbersB"
+                android:text="@string/num.7" />
 
-            <Button
-                android:layout_column="1"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/numbers"
-                android:gravity="center"
-                android:text="8"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_8"
+                style="@style/numbersB"
+                android:text="@string/num.8" />
 
-            <Button
-                android:layout_column="2"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/numbers"
-                android:gravity="center"
-                android:text="9"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_9"
+                style="@style/numbersB"
+                android:text="@string/num.9" />
 
-            <Button
-                android:layout_column="3"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/operators_m"
-                android:gravity="center"
-                android:text="×"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_ml"
+                style="@style/opersB"
+                android:text="@string/oper.ml" />
 
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:background="@color/black">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <Button
-                android:layout_column="0"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/numbers"
-                android:gravity="center"
-                android:text="4"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_4"
+                style="@style/numbersB"
+                android:text="@string/num.4" />
 
-            <Button
-                android:layout_column="1"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/numbers"
-                android:gravity="center"
-                android:text="5"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_5"
+                style="@style/numbersB"
+                android:text="@string/num.5" />
 
-            <Button
-                android:layout_column="2"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/numbers"
-                android:gravity="center"
-                android:text="6"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_6"
+                style="@style/numbersB"
+                android:text="@string/num.6" />
 
-            <Button
-                android:layout_column="3"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/operators_m"
-                android:gravity="center"
-                android:text="-"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_mn"
+                style="@style/opersB"
+                android:text="@string/oper.mn" />
 
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:background="@color/black">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <Button
-                android:layout_column="0"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/numbers"
-                android:gravity="center"
-                android:text="1"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_1"
+                style="@style/numbersB"
+                android:text="@string/num.1" />
 
-            <Button
-                android:layout_column="1"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/numbers"
-                android:gravity="center"
-                android:text="2"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_2"
+                style="@style/numbersB"
+                android:text="@string/num.2" />
 
-            <Button
-                android:layout_column="2"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/numbers"
-                android:gravity="center"
-                android:text="3"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_3"
+                style="@style/numbersB"
+                android:text="@string/num.3" />
 
-            <Button
-                android:layout_column="3"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/operators_m"
-                android:gravity="center"
-                android:text="+"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_pl"
+                style="@style/opersB"
+                android:text="@string/oper.pl" />
 
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:background="@color/black">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <Button
-                android:layout_column="0"
-                android:layout_weight="40"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/numbers"
-                android:gravity="center"
-                android:text="0"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_0"
+                style="@style/numbersB"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:paddingTop="16dp"
+                android:paddingStart="32dp"
+                android:text="@string/num.0"
+                android:layout_width="184dp"/>
 
-            <Button
-                android:layout_column="1"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/numbers"
-                android:gravity="center"
-                android:text="9"
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_d"
+                style="@style/numbersB"
+                android:text="@string/num.d" />
 
-            <Button
-                android:layout_column="2"
-                android:layout_weight="1"
-                android:layout_margin="@string/butM"
-                android:background="@drawable/operators_m"
-                android:gravity="center"
-                android:text="="
-                android:textSize="36dp"
-                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/but_eq"
+                style="@style/opersB"
+                android:text="@string/oper.eq" />
 
-        </TableRow>
+        </LinearLayout>
 
-    </TableLayout>
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

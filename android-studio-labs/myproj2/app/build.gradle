@@ -1,16 +1,14 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-android'
-    id 'kotlin-android-extensions'
 }
 
 android {
-    namespace 'com.example.my_proj3'
+    namespace 'com.example.my_proj2'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.my_proj3"
+        applicationId "com.example.my_proj2"
         minSdk 29
         targetSdk 33
         versionCode 1
@@ -32,11 +30,6 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dependenciesInfo {
-        includeInBundle true
-        includeInApk true
-    }
-    buildToolsVersion '33.0.2'
 }
 
 dependencies {
