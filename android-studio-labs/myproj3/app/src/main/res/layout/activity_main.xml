@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:gravity="bottom">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:ellipsize="start"
+        android:gravity="end"
+        android:maxLines="1"
+        android:paddingEnd="20sp"
+        android:text="@string/res_out"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter"
+        android:textFontWeight="300"
+        android:textSize="45sp"
+        tools:ignore="RtlSymmetry" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/butC"
+                style="@style/opersAddB"
+                android:text="@string/oper_a_c" />
+
+            <TextView
+                android:id="@+id/butPM"
+                style="@style/opersAddB"
+                android:text="@string/oper_a_pm" />
+
+            <TextView
+                android:id="@+id/butPR"
+                style="@style/opersAddB"
+                android:text="@string/oper_a_pr" />
+
+            <TextView
+                android:id="@+id/butDV"
+                style="@style/opersB"
+                android:text="@string/oper_dv" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/but7"
+                style="@style/numbersB"
+                android:text="@string/num_7" />
+
+            <TextView
+                android:id="@+id/but8"
+                style="@style/numbersB"
+                android:text="@string/num_8" />
+
+            <TextView
+                android:id="@+id/but9"
+                style="@style/numbersB"
+                android:text="@string/num_9" />
+
+            <TextView
+                android:id="@+id/butML"
+                style="@style/opersB"
+                android:text="@string/oper_ml" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/but4"
+                style="@style/numbersB"
+                android:text="@string/num_4" />
+
+            <TextView
+                android:id="@+id/but5"
+                style="@style/numbersB"
+                android:text="@string/num_5" />
+
+            <TextView
+                android:id="@+id/but6"
+                style="@style/numbersB"
+                android:text="@string/num_6" />
+
+            <TextView
+                android:id="@+id/butMN"
+                style="@style/opersB"
+                android:text="@string/oper_mn" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/but1"
+                style="@style/numbersB"
+                android:text="@string/num_1" />
+
+            <TextView
+                android:id="@+id/but2"
+                style="@style/numbersB"
+                android:text="@string/num_2" />
+
+            <TextView
+                android:id="@+id/but3"
+                style="@style/numbersB"
+                android:text="@string/num_3" />
+
+            <TextView
+                android:id="@+id/butPL"
+                style="@style/opersB"
+                android:fontFamily="sans-serif"
+                android:text="@string/oper_pl" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/but0"
+                style="@style/numbersB"
+                android:layout_width="90dp"
+                android:paddingEnd="90dp"
+                android:text="@string/num_0"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/butD"
+                style="@style/numbersB"
+                android:text="@string/num_d" />
+
+            <TextView
+                android:id="@+id/butEQ"
+                style="@style/opersB"
+                android:text="@string/oper_eq" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
