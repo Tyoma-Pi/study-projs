@@ -10,16 +10,22 @@
     android:gravity="bottom">
 
     <TextView
+        android:id="@+id/testOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white" />
+
+    <TextView
         android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="60sp"
         android:ellipsize="start"
-        android:gravity="end"
+        android:fontFamily="@font/inter"
+        android:gravity="center|end"
         android:maxLines="1"
         android:paddingEnd="20sp"
         android:text="@string/res_out"
         android:textColor="@color/white"
-        android:fontFamily="@font/inter"
         android:textFontWeight="300"
         android:textSize="45sp"
         tools:ignore="RtlSymmetry" />
@@ -27,7 +33,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="500dp">
+        android:layout_height="460dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -146,7 +152,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:id="@+id/but0"
