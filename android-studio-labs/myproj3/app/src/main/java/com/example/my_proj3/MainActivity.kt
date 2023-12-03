@@ -19,19 +19,6 @@ class MainActivity : AppCompatActivity() {
         val binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val myMBBtransition = TransitionDrawable(
-            arrayOf(
-                ColorDrawable(Color.parseColor("#FFFF9600")),
-                ColorDrawable(Color.parseColor("#FFFFFFFF"))
-                )
-            )
-        val myMBTtransition = TransitionDrawable(
-            arrayOf(
-                ColorDrawable(Color.parseColor("#FFFFFFFF")),
-                ColorDrawable(Color.parseColor("#FFFF9600"))
-                )
-        )
-
         var num1 = 0.0
         var num2 = 0.0
         var numFract1 = 0
