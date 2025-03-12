@@ -1,19 +1,38 @@
 package org.example;
 
-import java.sql.*;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    private final static String HOST = "localhost";
+    private final static String DATABASENAME = "task1";
+    private final static String USERNAME = "root";
+    private final static String PASSWORD = "";
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        String url = "jdbc:mysql://" + HOST + "/" + DATABASENAME + "?user=" + USERNAME + "&password=" + PASSWORD;
+        try (Connection DBConnection = DriverManager.getConnection(url)) {
+            if (DBConnection == null) {
+                System.err.println("Нет соединения с БД.");
+            } else {
+                System.out.println("Соединение с БД установлено.");
+                Statement SQLStatement = DBConnection.createStatement();
+                String SQLQuery = "SELECT * FROM Vehicle";
+                // boolean isExecuted = SQLStatement.execute(SQLQuery);
+                // if (isExecuted) {
+                //     System.out.println("Selected all the vehicles.");
+                // }
+                ResultSet SQLData = SQLStatement.executeQuery(SQLQuery);
+                while (SQLData.next()) {
+                    System.out.println(SQLData.getString("maker")+"\t"+SQLData.getString("model"));
+                }
+                SQLStatement.close();
+            }
+        } catch (SQLException throwables) {
+            System.out.println("Ошибка при подключении к БД");
+            throwables.printStackTrace();
         }
     }
 }
