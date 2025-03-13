@@ -1,3 +1,5 @@
+-- Код для MySQL
+
 -- Создание таблицы Classes
 CREATE TABLE Classes (
     class VARCHAR(100) NOT NULL,

@@ -1,41 +1,49 @@
--- Создание таблицы Hotel
-CREATE TABLE Hotel (
-    ID_hotel INT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    location VARCHAR(255) NOT NULL
+-- Код для PostgreSQL
+
+CREATE TYPE rooms_type AS ENUM('Single', 'Double', 'Suite');
+
+-- Создание таблицы Hotels
+CREATE TABLE Hotels (
+    id_hotel INT,
+    "name" VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    CONSTRAINT pk_hotels_id PRIMARY KEY (id_hotel)
 );
 
--- Создание таблицы Room
-CREATE TABLE Room (
-    ID_room INT PRIMARY KEY,
-    ID_hotel INT,
-    room_type ENUM('Single', 'Double', 'Suite') NOT NULL,
+-- Создание таблицы Rooms
+CREATE TABLE Rooms (
+    id_room INT,
+    id_hotel INT,
+    room_type rooms_type NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     capacity INT NOT NULL,
-    FOREIGN KEY (ID_hotel) REFERENCES Hotel(ID_hotel)
+    CONSTRAINT pk_rooms_id PRIMARY KEY (id_room),
+    CONSTRAINT fk_rooms_id_hotel FOREIGN KEY (id_hotel) REFERENCES Hotels(id_hotel)
 );
 
--- Создание таблицы Customer
-CREATE TABLE Customer (
-    ID_customer INT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+-- Создание таблицы Customers
+CREATE TABLE Customers (
+    id_customer INT,
+    "name" VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    phone VARCHAR(20) NOT NULL
+    phone VARCHAR(20) NOT NULL,
+    CONSTRAINT pk_customers_id PRIMARY KEY (id_customer)
 );
 
--- Создание таблицы Booking
-CREATE TABLE Booking (
-    ID_booking INT PRIMARY KEY,
-    ID_room INT,
-    ID_customer INT,
+-- Создание таблицы Bookings
+CREATE TABLE Bookings (
+    id_booking INT,
+    id_room INT,
+    id_customer INT,
     check_in_date DATE NOT NULL,
     check_out_date DATE NOT NULL,
-    FOREIGN KEY (ID_room) REFERENCES Room(ID_room),
-    FOREIGN KEY (ID_customer) REFERENCES Customer(ID_customer)
+    CONSTRAINT pk_bookings_id PRIMARY KEY (id_booking),
+    CONSTRAINT fk_bookings_id_room FOREIGN KEY (id_room) REFERENCES Rooms(id_room),
+    CONSTRAINT fk_bookings_id_customer FOREIGN KEY (id_customer) REFERENCES Customers(id_customer)
 );
 
--- Вставка данных в таблицу Hotel
-INSERT INTO Hotel (ID_hotel, name, location) VALUES
+-- Вставка данных в таблицу Hotels
+INSERT INTO Hotels (id_hotel, "name", "location") VALUES
 (1, 'Grand Hotel', 'Paris, France'),
 (2, 'Ocean View Resort', 'Miami, USA'),
 (3, 'Mountain Retreat', 'Aspen, USA'),
@@ -47,8 +55,8 @@ INSERT INTO Hotel (ID_hotel, name, location) VALUES
 (9, 'Business Suites', 'Tokyo, Japan'),
 (10, 'Eco-Friendly Hotel', 'Copenhagen, Denmark');
 
--- Вставка данных в таблицу Room
-INSERT INTO Room (ID_room, ID_hotel, room_type, price, capacity) VALUES
+-- Вставка данных в таблицу Rooms
+INSERT INTO Rooms (id_room, id_hotel, room_type, price, capacity) VALUES
 (1, 1, 'Single', 150.00, 1),
 (2, 1, 'Double', 200.00, 2),
 (3, 1, 'Suite', 350.00, 4),
@@ -69,8 +77,8 @@ INSERT INTO Room (ID_room, ID_hotel, room_type, price, capacity) VALUES
 (18, 10, 'Single', 110.00, 1),
 (19, 10, 'Double', 160.00, 2);
 
--- Вставка данных в таблицу Customer
-INSERT INTO Customer (ID_customer, name, email, phone) VALUES
+-- Вставка данных в таблицу Customers
+INSERT INTO Customers (id_customer, "name", email, phone) VALUES
 (1, 'John Doe', 'john.doe@example.com', '+1234567890'),
 (2, 'Jane Smith', 'jane.smith@example.com', '+0987654321'),
 (3, 'Alice Johnson', 'alice.johnson@example.com', '+1122334455'),
@@ -82,8 +90,8 @@ INSERT INTO Customer (ID_customer, name, email, phone) VALUES
 (9, 'George Washington', 'george.washington@example.com', '+7788990011'),
 (10, 'Hannah Montana', 'hannah.montana@example.com', '+8899001122');
 
--- Вставка данных в таблицу Booking с разнообразием клиентов
-INSERT INTO Booking (ID_booking, ID_room, ID_customer, check_in_date, check_out_date) VALUES
+-- Вставка данных в таблицу Bookings
+INSERT INTO Bookings (id_booking, id_room, id_customer, check_in_date, check_out_date) VALUES
 (1, 1, 1, '2025-05-01', '2025-05-05'),  -- 4 ночи, John Doe
 (2, 2, 2, '2025-05-02', '2025-05-06'),  -- 4 ночи, Jane Smith
 (3, 3, 3, '2025-05-03', '2025-05-07'),  -- 4 ночи, Alice Johnson

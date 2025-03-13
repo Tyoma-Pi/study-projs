@@ -1,3 +1,5 @@
+-- Код для MySQL
+
 -- Создание таблицы Vehicle
 CREATE TABLE Vehicle (
     maker VARCHAR(100) NOT NULL,

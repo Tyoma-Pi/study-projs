@@ -1,3 +1,5 @@
+-- Код для MySQL
+
 -- Создание таблицы Departments
 CREATE TABLE Departments (
     DepartmentID INT PRIMARY KEY,
