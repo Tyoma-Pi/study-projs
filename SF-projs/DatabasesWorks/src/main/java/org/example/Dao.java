@@ -1,16 +1,17 @@
 package org.example;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.List;
-import java.util.Optional;
 
 public interface Dao<T> {
-    Optional<T> get(long id);
+    ResultSet get(Connection DBConnection, String identifier);
 
-    List<T> getAll();
+    List<T> getAll(Connection DBConnection);
 
-    void save(T t);
+    void save(Connection DBConnection, T t);
 
-    void update(T t, String[] params);
+    void update(Connection DBConnection, T t, String[] params);
 
-    void delete(T t);
+    void delete(Connection DBConnection, T t);
 }

@@ -3,6 +3,7 @@ package org.example;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -18,15 +19,19 @@ public class Main {
                 System.err.println("Нет соединения с БД.");
             } else {
                 System.out.println("Соединение с БД установлено.");
-                Statement SQLStatement = DBConnection.createStatement();
                 String SQLQuery = "SELECT * FROM Vehicle";
+                PreparedStatement SQLStatement = DBConnection.prepareStatement(SQLQuery);
                 // boolean isExecuted = SQLStatement.execute(SQLQuery);
                 // if (isExecuted) {
                 //     System.out.println("Selected all the vehicles.");
                 // }
                 ResultSet SQLData = SQLStatement.executeQuery(SQLQuery);
                 while (SQLData.next()) {
-                    System.out.println(SQLData.getString("maker")+"\t"+SQLData.getString("model"));
+                    if (SQLData.wasNull()) {
+                        System.out.println("NULL");
+                    } else {
+                        System.out.println(SQLData.getString("maker")+"\t"+SQLData.getString("model"));
+                    }
                 }
                 SQLStatement.close();
             }
