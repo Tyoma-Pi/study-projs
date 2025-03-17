@@ -25,7 +25,7 @@ public class Main {
                 System.out.println("Соединение с БД установлено.");
                 switch (DATABASENAME) {
                     case "test1":
-                        System.out.println("Введите номер выполняемого запроса на поиск данных - от 1 до 3");
+                        System.out.println("Введите номер выполняемого запроса на поиск данных - от 1 до 2");
                         break;
                     case "test2":
                         System.out.println("Введите номер выполняемого запроса на поиск данных - от 1 до 5");
